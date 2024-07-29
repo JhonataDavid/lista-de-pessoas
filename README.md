@@ -116,8 +116,8 @@ public class Main {
         Criar gerenciador = new Criar();
 
         // Adicionando pessoas
-        gerenciador.adicionarPessoa("David", 21, 1.69);
-        gerenciador.adicionarPessoa("Ana", 30, 1.75);
+        gerenciador.adicionarPessoa("David", 21, 1.70);
+        gerenciador.adicionarPessoa("Marilia", 20, 1.60);
 
         // Exibindo a lista de pessoas
         gerenciador.mostrarListaDePessoas();
