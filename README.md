@@ -50,6 +50,17 @@ A classe `Criar` é responsável por gerenciar uma lista de objetos `Pessoa`. Aq
     - `nome`: Nome da pessoa a ser procurada.
   - Se nenhuma pessoa for encontrada, exibe uma mensagem informando isso.
 
+- **`public void removerPessoa(String nome)`**
+  - Remove todas as pessoas da lista que possuem o nome fornecido.
+  - **Parâmetro:**
+    - `nome`: Nome da pessoa a ser removida. A busca é feita de forma insensível a maiúsculas e minúsculas.
+  - **Descrição:**
+    - Cria uma lista auxiliar para armazenar as pessoas a serem removidas.
+    - Itera sobre a lista de pessoas para identificar aquelas cujo nome corresponde ao nome fornecido.
+    - Remove todas as pessoas encontradas da lista principal.
+    - Se o nome fornecido for nulo ou vazio, o método não realiza nenhuma remoção.
+    - Se nenhuma pessoa com o nome especificado for encontrada, não há mensagem adicional além da remoção.
+
 ### Classe `Pessoa`
 
 A classe `Pessoa` representa uma pessoa com os seguintes atributos e métodos:
@@ -119,5 +130,11 @@ public class Main {
 
         // Exibindo pessoas pelo nome
         gerenciador.mostrarPessoasPeloNome("David");
+
+        // Removendo pessoas pelo nome
+        gerenciador.removerPessoa("David");
+
+        // Exibindo a lista de pessoas após remoção
+        gerenciador.mostrarListaDePessoas();
     }
 }
