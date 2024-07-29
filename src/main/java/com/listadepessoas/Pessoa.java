@@ -45,6 +45,7 @@ public class Pessoa extends Criar {
                         ", Altura= " + altura + "\n";
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

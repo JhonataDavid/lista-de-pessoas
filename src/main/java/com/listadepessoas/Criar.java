@@ -22,8 +22,8 @@ public class Criar {
     /**
      * Adiciona uma nova pessoa à lista.
      *
-     * @param nome Nome da pessoa.
-     * @param idade Idade da pessoa.
+     * @param nome   Nome da pessoa.
+     * @param idade  Idade da pessoa.
      * @param altura Altura da pessoa.
      */
     public void adicionarPessoa(String nome, int idade, double altura) {
@@ -97,5 +97,38 @@ public class Criar {
             // Mensagem caso nenhum nome corresponda
             System.out.println("Nenhuma pessoa com o nome " + nome + " foi encontrada.");
         }
+    }
+    /**
+     * Remove todas as pessoas da lista que possuem o nome fornecido.
+     *
+     * @param nome Nome da pessoa a ser removida. A busca é feita de forma
+     *             insensível a maiúsculas e minúsculas.
+     *
+     * <p>O método realiza a seguinte operação:</p>
+     * <ul>
+     *     <li>Cria uma lista auxiliar para armazenar as pessoas a serem removidas.</li>
+     *     <li>Itera sobre a lista de pessoas para identificar aquelas cujo nome
+     *         corresponde ao nome fornecido.</li>
+     *     <li>Remove todas as pessoas encontradas da lista principal.</li>
+     * </ul>
+     * <p>Se o nome fornecido for nulo ou vazio, o método não realiza nenhuma remoção.</p>
+     * <p>Se nenhuma pessoa com o nome especificado for encontrada, não há mensagem
+     * adicional além da remoção.</p>
+     */
+    public void removerPessoa(String nome) {
+        // Cria uma lista para armazenar as pessoas que precisam ser removidas
+        List<Pessoa> tarefasParaRemover = new ArrayList<>();
+
+        // Itera sobre cada pessoa na lista principal
+        for (Pessoa pessoa : listaDePessoas) {
+            // Verifica se o nome da pessoa corresponde ao nome fornecido,
+            // ignorando maiúsculas e minúsculas
+            if (pessoa.getNome().equalsIgnoreCase(nome)) {
+                tarefasParaRemover.add(pessoa); // Adiciona a pessoa à lista de remoção
+            }
+        }
+
+        // Remove todas as pessoas encontradas da lista principal
+        listaDePessoas.removeAll(tarefasParaRemover);
     }
 }
