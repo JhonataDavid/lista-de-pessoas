@@ -117,18 +117,18 @@ public class Criar {
      */
     public void removerPessoa(String nome) {
         // Cria uma lista para armazenar as pessoas que precisam ser removidas
-        List<Pessoa> tarefasParaRemover = new ArrayList<>();
+        List<Pessoa> pessoasParaRemover = new ArrayList<>();
 
         // Itera sobre cada pessoa na lista principal
         for (Pessoa pessoa : listaDePessoas) {
             // Verifica se o nome da pessoa corresponde ao nome fornecido,
             // ignorando maiúsculas e minúsculas
             if (pessoa.getNome().equalsIgnoreCase(nome)) {
-                tarefasParaRemover.add(pessoa); // Adiciona a pessoa à lista de remoção
+                pessoasParaRemover.add(pessoa); // Adiciona a pessoa à lista de remoção
             }
         }
 
         // Remove todas as pessoas encontradas da lista principal
-        listaDePessoas.removeAll(tarefasParaRemover);
+        listaDePessoas.removeAll(pessoasParaRemover);
     }
 }
